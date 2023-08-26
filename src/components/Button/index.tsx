@@ -1,10 +1,11 @@
-import { SVGAttributes } from 'react'
+import { ButtonHTMLAttributes } from 'react'
 import { Container } from './styles'
 
-export function Button({children}: SVGAttributes<SVGElement>){
+
+export function Button({...props}: ButtonHTMLAttributes<HTMLButtonElement>
+    ){
     return(
-        <Container>
-            {children}
-        </Container>
+        <Container {...props}/>
+            
     )
 }

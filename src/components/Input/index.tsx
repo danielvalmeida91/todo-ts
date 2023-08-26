@@ -7,6 +7,7 @@ export function Input( {...rest}: InputProps ){
     return(
         <Container>
             <input {...rest} />
+            <label />
         </Container>
     )
 }

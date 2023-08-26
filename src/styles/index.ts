@@ -18,7 +18,7 @@ export const Header = styled.header`
         width: 126px;
     }
     
-    background: ${({ theme }) => theme.COLORS.GRAY_700};
+    background: ${ props => props.theme['gray-700']};
 
 `
 
@@ -40,13 +40,12 @@ export const Form = styled.form`
     gap: 8px;
 
     > button {
-        background: ${({ theme }) => theme.COLORS.BLUE_DARK};
-        font: ${({ theme }) => theme.FONTS.INTER_14_REGULAR};
+        background: ${props => props.theme['blue-dark']};
 
         transition: background-color 0.1s ;
 
         &:hover{
-            background: ${({ theme }) => theme.COLORS.BLUE};
+            background: ${props => props.theme.blue};
         }
 
         > svg {
@@ -59,33 +58,68 @@ export const Wrapper = styled.div `
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     gap: 8px;
 
     width: 46rem;
 
     > header {
-        flex: 1;
         display: flex ;
         align-items: flex-start;
         justify-content: space-between;
+        
+        width: 100%;
+        margin-bottom: 25px;
+
+        font-size: 0.875rem;
+        font-weight: 700;
+        line-height: normal;
+
 
         > p {
-            color: ${({ theme }) => theme.COLORS.BLUE};
-            font: ${({ theme }) => theme.FONTS.INTER_14_REGULAR};
+            color: ${ props => props.theme.blue };
         }
         
         > p + p {
-            color: ${({ theme }) => theme.COLORS.PURPLE};
-            font: ${({ theme }) => theme.FONTS.INTER_14_REGULAR};
+            color: ${ props => props.theme.purple };
         }
 
         span {
-            color: ${({ theme }) => theme.COLORS.GRAY_200};
-            font: ${({ theme }) => theme.FONTS.INTER_12_BOLD};
+            color: ${props => props.theme['gray-200']};
             border-radius: 50%;
             padding: 2px 8px;
-            background: ${({ theme }) => theme.COLORS.GRAY_400};
+            background: ${ props => props.theme['gray-400']};
         }
+    }
+
+    main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 0.75rem;
+
+        .emptyTasks {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 1rem;
+
+            padding: 4rem 1.5rem;
+
+            width: 45rem;
+
+            border-top: 1px solid ${props => props.theme['gray-400']};
+            border-radius: 8px;
+            
+
+        }
+
+        .emptyTasksText {
+            color: ${ props => props.theme['gray-300']};
+        }
+
     }
 
     

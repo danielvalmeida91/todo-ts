@@ -7,19 +7,25 @@ export const Container = styled.div`
     
     gap: 8px;
 
-    > input {
+
+    label{
+        position: absolute;
+    }
+    input {
+        position: relative;
+        z-index: 999;
         width: 638px;
         text-align: start;
         padding: 1rem 0 1rem 1rem;
 
-        color: ${({theme}) => theme.COLORS.GRAY_100};
-        background: ${({theme}) => theme.COLORS.GRAY_500};
+        color: ${ props => props.theme['gray-100']};
+        background: ${props => props.theme['gray-500']};
 
         border: none;
         border-radius: 8px;
 
         &:placeholder{
-            color: ${({ theme }) =>  theme.COLORS.GRAY_300};
+            color: ${ props => props.theme['gray-300']};
         }
     }
 `

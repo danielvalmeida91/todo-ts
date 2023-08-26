@@ -7,7 +7,7 @@ export default createGlobalStyle`
 
     :focus {
         outline: transparent;
-        box-shadow: 0 0 0 1px ${({theme}) => theme.COLORS.PURPLE_DARK};
+        box-shadow: 0 0 0 1px ${ props => props.theme['purple-dark']};
     }
 
     * {
@@ -18,13 +18,17 @@ export default createGlobalStyle`
     }
 
     body {
-        background: ${({theme}) => theme.COLORS.GRAY_600};
-        color: ${({theme}) => theme.COLORS.GRAY_300};
+        background: ${ props => props.theme['gray-600']};
+        color: ${ props => props.theme['gray-300']};
         -webkit-font-smoothing: antialiased;
     }
 
     body, input, textarea, button {
-        font: ${({theme}) => theme.FONTS.INTER_16_REGULAR};
-        color: ${({ theme }) => theme.COLORS.GRAY_100};
+        font-size: 1rem;
+        font-weight: regular;
+        line-height: 140%;
+        font-family: 'Inter', sans-serif;
+
+        color: ${ props => props.theme['gray-100']}
     }
 ` 
